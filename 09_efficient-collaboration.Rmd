@@ -18,10 +18,10 @@ knitr::opts_chunk$set(echo = FALSE)
 **Learning objectives:**
 
 -   coding standards and techniques
--   how to minimize the risks and maximize the benefits of collaborative R programming.
 -   uniform styling of code
--   Understand the value of using git and GitHub
--   Best way to approach big projects
+-   understand the value of using git and GitHub
+-   how to minimize the risks and maximize the benefits of collaborative R programming
+-   how to approach big projects
 
 ## Top 5 tips for efficient collaboration {.unnumbered}
 
@@ -31,52 +31,78 @@ knitr::opts_chunk$set(echo = FALSE)
 -   Use informative commit messages.
 -   Don't be afraid to elicit feedback from colleagues.
 
-## General advise {.unnumbered}
-
--   Use modular code
--   Comment your code
--   Don't Repeat Yourself (DRY)
--   Be concise, clear and consistent.
-
 ## Code formatting {.unnumbered}
 
--   The use of two spaces indents the code
--   For indentation afterwards, use (`Ctrl + A`, then `Ctrl + I`)
+-   Use indentation
+    -   two spaces indent the code
+    -   `Ctrl + A`, then `Ctrl + I` for indentation afterwards
+-   Strive to limit your code to 80 characters per line
+-   Never mix tabs with spaces
 -   Use of spacing makes your code more readable
-    -   Add spaces around `+`, `-`, `\` and `*`
-    -   Add spaces around assignment and comparison operators
-    -   Add space after a comma
--   exceptions to the space rule are `:`, `::` and `:::`, as well as `$` and `@`
--   Never mix tabs with spaces!
+
+```{r, echo=TRUE, eval=FALSE}
+# Good style
+if(x < 5){
+  x
+} else {
+  y
+}
+```
+
+## Spacing {-}
+-   Add spaces around `+`, `-`, `\` and `*`
+-   Add spaces around assignment and comparison operators
+-   Add space after a comma
+-   Exceptions to the space rule are `:`, `::` and `:::`, as well as `$` and `@`
+
+Spacing can avoid bugs.
+```{r, echo=TRUE, eval=FALSE}
+# Bug. x now equals 1
+x[x<-1]
+# Correct. Selecting values less than -1
+x[x < -1]
+```
 
 ## Loading packages {.unnumbered}
 
--   Use `library` instead of `require`.
+-   Use `library` instead of `require`
     -   `library("dplyr")`.
 -   Only load packages that you need
--   Use require if package is not essential
-    -   capture warnings of missing packages
--   Consider a separate file for used librarys.
+-   Use `require` if package is not essential
+    -   remember to capture warnings of missing packages
+-   Consider a separate file for used librarys
 
 ## Commenting is important {.unnumbered}
 
 -   Comments can improve efficiency
--   Collaborators and a future you will be thankful
+-   Collaborators and your future self will be thankful
 -   Provide context, not code explanation
--   start each comment with just one `#` and a space.
+-   start each comment with just one `#` and a space
 -   `# ----` enables code folding
-    -   Put at start and end of that code
 
-## Object naming and assignment {.unnumbered}
+## Naming files {.unnumbered}
 
--   **R file names**: all lower case and without spaces. **Object names**
+> "There are only two hard things in Computer Science: cache invalidation and naming things." --- Phil Karlton
+
+**R file names**:
+
+-   all lower case and without spaces
+-   If files need to be run in sequence, prefix them with numbers
+
+## Object naming {.unnumbered}
+
 -   Helps the reader to follow along, improves project efficiency
 -   choose names consistently and sensibly
-    -   Especially objects that are often used in your code
+    - especially for objects that are often used in your code
 -   `underscore_separated` format is usually preferred
-    -   Avoid `.` for the sake of Python programmers
+-   Avoid `.` for the sake of Python programmers
+-   Where possible, avoid using names of existing functions and variables
+-   use `TRUE/FALSE` instead of `T/F` for clarity.
 
-**Object assignment** - `<-` and `=` can be used **mostly** interchangeably. - Difference occurs in function calls.
+## Object assignment {.unnumbered}
+
+-   `<-` and `=` can be used **mostly** interchangeably.
+-   Difference occurs in function calls.
 
 ```{r, eval=FALSE, echo=TRUE}
 system.time(expr1 <- rnorm(10e5))
@@ -85,6 +111,7 @@ system.time(expr2 = rnorm(10e5)) # error
 
 ## Version Control {.unnumbered}
 
+-   Keep track of your work progress
 -   You can use a shell or RStudio's Git tab
 -   Document your work with clear and concise commit messages
 -   Push commit to update file on server (GitHub)
@@ -93,11 +120,13 @@ system.time(expr2 = rnorm(10e5)) # error
 ## GitHub {.unnumbered}
 
 -   Share your work and collaborate on code
+-   Write modular code
 -   `devtools::install_github()` can be used to install and update packages
 -   Make sure you know your collaborators' preferences
-    -   Also include other tools, like calls and emails.
-    -   Not everybody knows git or wants to use it.
+    -   Also include other tools, like calls and emails
+    -   Not everybody knows Git or wants to use it
     -   It can also create more problems than actually help
+-   agree on a common style up-front
 
 ## GitHub: Things to know {.unnumbered}
 
@@ -109,6 +138,7 @@ system.time(expr2 = rnorm(10e5)) # error
     -   **clones**: Create an exact copy of this repository
     -   **pull request**: Add code to existing project. Provides an opportunity for others to comment on your code before merging
 
+
 ## Review your code {.unnumbered}
 
 Questions to be considered
@@ -118,11 +148,12 @@ Questions to be considered
 -   Does the code conform to existing style guidelines?
 -   Are there any automated tests? If so, are they sufficient?
 
-## {-}
+##  {.unnumbered}
+
 **A good code review shares knowledge and best practices.**
 
--   Be constructive, give suggested improvements
--   Set a time frame/amount of lines that you want to review ,
+-   Be constructive, suggest improvements
+-   Set a time frame/amount of lines that you want to review
 -   Review code before merging with large code base
 
 If you don't work in a team, sharing code on a repository or other webpages can get you feedback.
@@ -134,10 +165,11 @@ If you don't work in a team, sharing code on a repository or other webpages can 
 `r knitr::include_url("https://www.youtube.com/embed/URL")`
 
 <details>
-<summary>Meeting chat log</summary>
 
+<summary>Meeting chat log</summary>
 
 ```         
 LOG
 ```
+
 </details>
