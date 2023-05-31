@@ -1,24 +1,144 @@
+---
+title: "09 - Efficient collaboration"
+author: "Melanie Buhlmann"
+date: "`r Sys.Date()`"
+output: ioslides_presentation
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+
+#usethis::pr_init("chapter09")
+#devtools::install_dev_deps()
+
+```
+
 # Efficient collaboration
 
 **Learning objectives:**
 
-- THESE ARE NICE TO HAVE BUT NOT ABSOLUTELY NECESSARY
+-   coding standards and techniques
+-   how to minimize the risks and maximize the benefits of collaborative R programming.
+-   uniform styling of code
+-   Understand the value of using git and GitHub
+-   Best way to approach big projects
 
-## SLIDE 1 {-}
+## Top 5 tips for efficient collaboration {.unnumbered}
 
-- ADD SLIDES AS SECTIONS (`##`).
-- TRY TO KEEP THEM RELATIVELY SLIDE-LIKE; THESE ARE NOTES, NOT THE BOOK ITSELF.
+-   Have a consistent coding style.
+-   Think carefully about your comments and keep them up to date.
+-   Use version control whenever possible.
+-   Use informative commit messages.
+-   Don't be afraid to elicit feedback from colleagues.
 
-## Meeting Videos {-}
+## General advise {.unnumbered}
 
-### Cohort 1 {-}
+-   Use modular code
+-   Comment your code
+-   Don't Repeat Yourself (DRY)
+-   Be concise, clear and consistent.
+
+## Code formatting {.unnumbered}
+
+-   The use of two spaces indents the code
+-   For indentation afterwards, use (`Ctrl + A`, then `Ctrl + I`)
+-   Use of spacing makes your code more readable
+    -   Add spaces around `+`, `-`, `\` and `*`
+    -   Add spaces around assignment and comparison operators
+    -   Add space after a comma
+-   exceptions to the space rule are `:`, `::` and `:::`, as well as `$` and `@`
+-   Never mix tabs with spaces!
+
+## Loading packages {.unnumbered}
+
+-   Use `library` instead of `require`.
+    -   `library("dplyr")`.
+-   Only load packages that you need
+-   Use require if package is not essential
+    -   capture warnings of missing packages
+-   Consider a separate file for used librarys.
+
+## Commenting is important {.unnumbered}
+
+-   Comments can improve efficiency
+-   Collaborators and a future you will be thankful
+-   Provide context, not code explanation
+-   start each comment with just one `#` and a space.
+-   `# ----` enables code folding
+    -   Put at start and end of that code
+
+## Object naming and assignment {.unnumbered}
+
+-   **R file names**: all lower case and without spaces. **Object names**
+-   Helps the reader to follow along, improves project efficiency
+-   choose names consistently and sensibly
+    -   Especially objects that are often used in your code
+-   `underscore_separated` format is usually preferred
+    -   Avoid `.` for the sake of Python programmers
+
+**Object assignment** - `<-` and `=` can be used **mostly** interchangeably. - Difference occurs in function calls.
+
+```{r, eval=FALSE}
+system.time(expr1 <- rnorm(10e5))
+system.time(expr2 = rnorm(10e5)) # error
+```
+
+## Version Control {.unnumbered}
+
+-   You can use a shell or RStudio's Git tab
+-   Document your work with clear and concise commit messages
+-   Push commit to update file on server (GitHub)
+-   Use pull to get the latest version of the repository
+
+## GitHub {.unnumbered}
+
+-   Share your work and collaborate on code
+-   `devtools::install_github()` can be used to install and update packages
+-   Make sure you know your collaborators' preferences
+    -   Also include other tools, like calls and emails.
+    -   Not everybody knows git or wants to use it.
+    -   It can also create more problems than actually help
+
+## GitHub: Things to know {.unnumbered}
+
+-   GitHub offers a vast amount of possibilities
+-   Before going in depth, knowing some basics help a great deal
+-   Most important features for collaboration:
+    -   **branches**: Distinct versions of your repository
+    -   **forks**: Like branches but exist on other people's computers
+    -   **clones**: Create an exact copy of this repository
+    -   **pull request**: Add code to existing project. Provides an opportunity for others to comment on your code before merging
+
+## Review your code {.unnumbered}
+
+Questions to be considered
+
+-   Is the code correct and properly documented?
+-   Could the code be improved?
+-   Does the code conform to existing style guidelines?
+-   Are there any automated tests? If so, are they sufficient?
+
+## {-}
+**A good code review shares knowledge and best practices.**
+
+-   Be constructive, give suggested improvements
+-   Set a time frame/amount of lines that you want to review ,
+-   Review code before merging with large code base
+
+If you don't work in a team, sharing code on a repository or other webpages can get you feedback.
+
+## Meeting Videos {.unnumbered}
+
+### Cohort 1 {.unnumbered}
 
 `r knitr::include_url("https://www.youtube.com/embed/URL")`
 
 <details>
-<summary> Meeting chat log </summary>
 
-```
+<summary>Meeting chat log</summary>
+
+```         
 LOG
 ```
+
 </details>
