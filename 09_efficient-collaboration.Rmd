@@ -117,7 +117,7 @@ system.time(expr2 = rnorm(10e5)) # error
 -   Push commit to update file on server (GitHub)
 -   Use pull to get the latest version of the repository
 
-## GitHub {.unnumbered}
+## GitHub (1) {.unnumbered}
 
 -   Share your work and collaborate on code
 -   Write modular code
@@ -128,7 +128,7 @@ system.time(expr2 = rnorm(10e5)) # error
     -   It can also create more problems than actually help
 -   agree on a common style up-front
 
-## GitHub: Things to know {.unnumbered}
+## GitHub (2) {.unnumbered}
 
 -   GitHub offers a vast amount of possibilities
 -   Before going in depth, knowing some basics help a great deal
@@ -139,7 +139,7 @@ system.time(expr2 = rnorm(10e5)) # error
     -   **pull request**: Add code to existing project. Provides an opportunity for others to comment on your code before merging
 
 
-## Review your code {.unnumbered}
+## Review your code (1) {.unnumbered}
 
 Questions to be considered
 
@@ -148,7 +148,7 @@ Questions to be considered
 -   Does the code conform to existing style guidelines?
 -   Are there any automated tests? If so, are they sufficient?
 
-##  {.unnumbered}
+##  Review your code (2) {.unnumbered}
 
 **A good code review shares knowledge and best practices.**
 
