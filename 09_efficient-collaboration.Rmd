@@ -136,6 +136,7 @@ If you don't work in a team, sharing code on a repository or other webpages can 
 <details>
 <summary>Meeting chat log</summary>
 
+
 ```         
 LOG
 ```
