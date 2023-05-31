@@ -128,6 +128,7 @@ system.time(expr2 = rnorm(10e5)) # error
     -   It can also create more problems than actually help
 -   agree on a common style up-front
 
+
 ## GitHub (2) {.unnumbered}
 
 -   GitHub offers a vast amount of possibilities
@@ -147,6 +148,7 @@ Questions to be considered
 -   Could the code be improved?
 -   Does the code conform to existing style guidelines?
 -   Are there any automated tests? If so, are they sufficient?
+
 
 ##  Review your code (2) {.unnumbered}
 
