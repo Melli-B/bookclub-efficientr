@@ -78,7 +78,7 @@ knitr::opts_chunk$set(echo = FALSE)
 
 **Object assignment** - `<-` and `=` can be used **mostly** interchangeably. - Difference occurs in function calls.
 
-```{r, eval=FALSE}
+```{r, eval=FALSE, echo=TRUE}
 system.time(expr1 <- rnorm(10e5))
 system.time(expr2 = rnorm(10e5)) # error
 ```
@@ -134,11 +134,9 @@ If you don't work in a team, sharing code on a repository or other webpages can 
 `r knitr::include_url("https://www.youtube.com/embed/URL")`
 
 <details>
-
 <summary>Meeting chat log</summary>
 
 ```         
 LOG
 ```
-
 </details>
